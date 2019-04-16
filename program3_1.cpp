@@ -9,13 +9,14 @@
 #include <sstream>
 #define BUFSIZE 16
 
-//Verify inside the secret() method that the UID is correct
+//Allow user to skip into secret, but they get fake information
 
 using namespace std;
 
 void public_function(string arg){
 	char buffer[BUFSIZE];
-	memset(buffer, 'B', BUFSIZE);
+	strcpy(buffer, "\"SECRET TUNNEL\"".c_str());
+	memset(buffer+15, 'B', BUFSIZE-15);
 	strcpy(buffer, arg.c_str());
 }
 
