@@ -16,7 +16,8 @@ using namespace std;
 
 void public_function(string arg){
 	srand(time(NULL));
-	void * r1, r2;
+	void * r1 = NULL;
+	void * r2 = NULL;
 	r1 = malloc(rand() % 100 + 1);
 	char buffer[BUFSIZE];
 	r2 = malloc(rand() % 100 + 1);
