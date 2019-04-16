@@ -11,7 +11,7 @@ $(P).o: $(P).cpp
 	g++ $(CFLAGS) -c $(P).cpp -o $(P).o
 	
 $(Q): $(Q).o
-	g++ $(CFLAGS) $(Q).o -o $(Q)
+	g++ $(CFLAGS) -pie -fPIE $(Q).o -o $(Q)
 	
 $(Q).o: $(Q).cpp
 	g++ $(CFLAGS) -c $(Q).cpp -o $(Q).o
