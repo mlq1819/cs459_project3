@@ -7,16 +7,23 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <time.h> 
 #define BUFSIZE 16
 
-//
+//randomly pads the memory, making attacks more difficult to pull off
 
 using namespace std;
 
 void public_function(string arg){
+	srand(time(NULL));
+	void * r1, r2;
+	r1 = malloc(rand() % 100 + 1);
 	char buffer[BUFSIZE];
+	r2 = malloc(rand() % 100 + 1);
 	memset(buffer, 'B', BUFSIZE);
 	strcpy(buffer, arg.c_str());
+	free(r1);
+	free(r2);
 }
 
 void secret(void){

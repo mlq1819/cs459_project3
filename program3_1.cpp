@@ -15,8 +15,7 @@ using namespace std;
 
 void public_function(string arg){
 	char buffer[BUFSIZE];
-	strcpy(buffer, "\"SECRET TUNNEL\"");
-	memset(buffer+15, 'B', BUFSIZE-15);
+	memset(buffer, 'B', BUFSIZE);
 	strcpy(buffer, arg.c_str());
 }
 
