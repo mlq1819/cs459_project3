@@ -21,26 +21,26 @@ void public_function(string arg){
 	char buffer3[BUFSIZE];
 	char buffer4[BUFSIZE];
 	char buffer5[BUFSIZE];
-	char * buffer;
+	char ** buffer;
 	switch(rand()%5+1){
 		case 1:
-			buffer = buffer1;
+			buffer = &buffer1;
 			break;
 		case 2:
-			buffer = buffer2;
+			buffer = &buffer2;
 			break;
 		case 3:
-			buffer = buffer3;
+			buffer = &buffer3;
 			break;
 		case 4:
-			buffer = buffer4;
+			buffer = &buffer4;
 			break;
 		case 5:
-			buffer = buffer5;
+			buffer = &buffer5;
 			break;
 	}
-	memset(buffer, 'B', BUFSIZE);
-	strcpy(buffer, arg.c_str());
+	memset(*buffer, 'B', BUFSIZE);
+	strcpy(*buffer, arg.c_str());
 }
 
 void secret(void){
