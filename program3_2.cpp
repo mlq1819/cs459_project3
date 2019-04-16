@@ -7,14 +7,38 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <time.h>
 #define BUFSIZE 16
 
-//Makes use of ASLR in the makefile
+//Randomly assigns a buffer to overflow from several;
 
 using namespace std;
 
 void public_function(string arg){
-	char buffer[BUFSIZE];
+	srand (time(NULL));
+	char buffer1[BUFSIZE];
+	char buffer2[BUFSIZE];
+	char buffer3[BUFSIZE];
+	char buffer4[BUFSIZE];
+	char buffer5[BUFSIZE];
+	char * buffer;
+	switch(rand()%5+1){
+		case 1:
+			buffer = buffer1;
+			break;
+		case 2:
+			buffer = buffer2;
+			break;
+		case 3:
+			buffer = buffer3;
+			break;
+		case 4:
+			buffer = buffer4;
+			break;
+		case 5:
+			buffer = buffer5;
+			break;
+	}
 	memset(buffer, 'B', BUFSIZE);
 	strcpy(buffer, arg.c_str());
 }
