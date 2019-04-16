@@ -21,7 +21,7 @@ void public_function(string arg){
 	char buffer3[BUFSIZE];
 	char buffer4[BUFSIZE];
 	char buffer5[BUFSIZE];
-	char ** buffer;
+	char (* buffer)[BUFSIZE];
 	switch(rand()%5+1){
 		case 1:
 			buffer = &buffer1;
